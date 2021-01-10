@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.2 on darwin)" generated="20210111 00:52:41.388" rpa="false">
+<suite id="s1" name="Test" source="/Users/giauthe/Documents/Pythonn Practice/test.robot">
+<kw name="Open SwagLabsMobileApp on ios emulator" library="CommonUtils" type="setup">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${address}</arg>
+<arg>autoGrantPermissions=${auto_grant_permissions}</arg>
+<arg>newCommandTimeout=${new_command_timeout}</arg>
+<arg>platformVersion=${platform_version}</arg>
+<arg>platformName=${platform_name_ios}</arg>
+<arg>deviceName=${device_name}</arg>
+<arg>noReset=${no_reset}</arg>
+<arg>app=${app}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:41.592" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session {"capabilities": {"firstMatch": [{"appium:autoGrantPermissions": "111", "appium:newCommandTimeout": "1800", "appium:platformVersion": "13.3", "platformName": "iOS", "appium:deviceName": "iPhone 8 Plus", "appium:noReset": "true", "appium:app": "org.reactjs.native.example.SwagLabsMobileApp"}]}, "desiredCapabilities": {"autoGrantPermissions": "111", "newCommandTimeout": "1800", "platformVersion": "13.3", "platformName": "iOS", "deviceName": "iPhone 8 Plus", "noReset": "true", "app": "org.reactjs.native.example.SwagLabsMobileApp"}}</msg>
+<msg timestamp="20210111 00:52:41.592" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:4723</msg>
+<msg timestamp="20210111 00:52:44.540" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session HTTP/1.1" 200 518</msg>
+<msg timestamp="20210111 00:52:44.541" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:44.542" level="DEBUG">Opened application with session id 6a1ab302-282c-45b8-ba0f-013b1b90b348</msg>
+<status status="PASS" starttime="20210111 00:52:41.586" endtime="20210111 00:52:44.542"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:41.586" endtime="20210111 00:52:44.543"></status>
+</kw>
+<test id="s1-t1" name="tc_Right user empty pass">
+<kw name="invalid login">
+<arguments>
+<arg> 'problem_user' </arg>
+<arg>${empty}</arg>
+<arg>${txt_err_password_message}</arg>
+</arguments>
+<kw name="clear username and password text">
+<kw name="Clear Text" library="AppiumLibrary">
+<doc>Clears the text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_username}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:44.545" level="INFO">Clear text field 'name=test-Username'</msg>
+<msg timestamp="20210111 00:52:44.545" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Username"}</msg>
+<msg timestamp="20210111 00:52:44.658" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:52:44.658" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:44.658" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/clear {"id": "3F000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:52:44.733" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:52:44.733" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:44.544" endtime="20210111 00:52:44.733"></status>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<doc>Clears the text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_password}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:44.735" level="INFO">Clear text field 'name=test-Password'</msg>
+<msg timestamp="20210111 00:52:44.735" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Password"}</msg>
+<msg timestamp="20210111 00:52:44.836" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:52:44.836" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:44.836" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/40000000-0000-0000-095A-000000000000/clear {"id": "40000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:52:44.923" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/40000000-0000-0000-095A-000000000000/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:52:44.924" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:44.733" endtime="20210111 00:52:44.924"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:44.544" endtime="20210111 00:52:44.924"></status>
+</kw>
+<kw name="input username">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:44.926" level="INFO">Typing text ' 'problem_user' ' into text field 'name=test-Username'</msg>
+<msg timestamp="20210111 00:52:44.926" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Username"}</msg>
+<msg timestamp="20210111 00:52:45.039" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:52:45.039" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:45.039" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/value {"text": " 'problem_user' ", "value": [" ", "'", "p", "r", "o", "b", "l", "e", "m", "_", "u", "s", "e", "r", "'", " "], "id": "3F000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:52:46.553" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:52:46.553" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:44.924" endtime="20210111 00:52:46.553"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:44.924" endtime="20210111 00:52:46.553"></status>
+</kw>
+<kw name="input password">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Value" library="AppiumLibrary">
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<arguments>
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:46.555" level="INFO">Setting text '' into text field 'name=test-Password'</msg>
+<msg timestamp="20210111 00:52:46.556" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Password"}</msg>
+<msg timestamp="20210111 00:52:46.723" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:52:46.723" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:46.723" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/appium/element/40000000-0000-0000-095A-000000000000/value {"id": "40000000-0000-0000-095A-000000000000", "value": [""]}</msg>
+<msg timestamp="20210111 00:52:47.620" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/appium/element/40000000-0000-0000-095A-000000000000/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:52:47.620" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:46.554" endtime="20210111 00:52:47.621"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:46.553" endtime="20210111 00:52:47.621"></status>
+</kw>
+<kw name="click login button">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btn_login}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:47.623" level="INFO">Clicking element 'name=test-LOGIN'.</msg>
+<msg timestamp="20210111 00:52:47.624" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-LOGIN"}</msg>
+<msg timestamp="20210111 00:52:47.772" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:52:47.772" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:47.772" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3B000000-0000-0000-095A-000000000000/click {"id": "3B000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:52:48.234" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3B000000-0000-0000-095A-000000000000/click HTTP/1.1" 200 65</msg>
+<msg timestamp="20210111 00:52:48.234" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:47.621" endtime="20210111 00:52:48.234"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:47.621" endtime="20210111 00:52:48.234"></status>
+</kw>
+<kw name="verify error message">
+<arguments>
+<arg>${err_message}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${err_message}</arg>
+<arg>${min_time_out}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:48.235" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "id", "value": "Password is required"}</msg>
+<msg timestamp="20210111 00:52:48.467" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 267</msg>
+<msg timestamp="20210111 00:52:48.467" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:48.467" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/32000000-0000-0000-095A-000000000000/displayed {"id": "32000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:52:48.655" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/32000000-0000-0000-095A-000000000000/displayed HTTP/1.1" 200 65</msg>
+<msg timestamp="20210111 00:52:48.655" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:48.235" endtime="20210111 00:52:48.655"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:48.234" endtime="20210111 00:52:48.655"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:44.543" endtime="20210111 00:52:48.655"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:44.543" endtime="20210111 00:52:48.655" critical="yes"></status>
+</test>
+<test id="s1-t2" name="tc_# Right user wrong pass">
+<kw name="invalid login">
+<arguments>
+<arg>problem_user</arg>
+<arg>problem_user</arg>
+<arg>${txt_err_username_password_message}</arg>
+</arguments>
+<kw name="clear username and password text">
+<kw name="Clear Text" library="AppiumLibrary">
+<doc>Clears the text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_username}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:48.658" level="INFO">Clear text field 'name=test-Username'</msg>
+<msg timestamp="20210111 00:52:48.658" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Username"}</msg>
+<msg timestamp="20210111 00:52:48.847" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:52:48.848" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:48.848" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/clear {"id": "3F000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:52:50.259" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:52:50.259" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:48.657" endtime="20210111 00:52:50.259"></status>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<doc>Clears the text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_password}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:50.261" level="INFO">Clear text field 'name=test-Password'</msg>
+<msg timestamp="20210111 00:52:50.261" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Password"}</msg>
+<msg timestamp="20210111 00:52:50.440" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:52:50.440" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:50.440" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/40000000-0000-0000-095A-000000000000/clear {"id": "40000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:52:50.579" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/40000000-0000-0000-095A-000000000000/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:52:50.579" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:50.259" endtime="20210111 00:52:50.579"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:48.656" endtime="20210111 00:52:50.579"></status>
+</kw>
+<kw name="input username">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:50.581" level="INFO">Typing text 'problem_user' into text field 'name=test-Username'</msg>
+<msg timestamp="20210111 00:52:50.581" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Username"}</msg>
+<msg timestamp="20210111 00:52:50.746" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:52:50.746" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:50.746" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/value {"text": "problem_user", "value": ["p", "r", "o", "b", "l", "e", "m", "_", "u", "s", "e", "r"], "id": "3F000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:52:51.318" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:52:51.318" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:50.580" endtime="20210111 00:52:51.318"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:50.579" endtime="20210111 00:52:51.318"></status>
+</kw>
+<kw name="input password">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Value" library="AppiumLibrary">
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<arguments>
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:51.320" level="INFO">Setting text 'problem_user' into text field 'name=test-Password'</msg>
+<msg timestamp="20210111 00:52:51.320" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Password"}</msg>
+<msg timestamp="20210111 00:52:51.473" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:52:51.473" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:51.473" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/appium/element/40000000-0000-0000-095A-000000000000/value {"id": "40000000-0000-0000-095A-000000000000", "value": ["problem_user"]}</msg>
+<msg timestamp="20210111 00:52:52.568" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/appium/element/40000000-0000-0000-095A-000000000000/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:52:52.569" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:51.319" endtime="20210111 00:52:52.569"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:51.318" endtime="20210111 00:52:52.569"></status>
+</kw>
+<kw name="click login button">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btn_login}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:52.572" level="INFO">Clicking element 'name=test-LOGIN'.</msg>
+<msg timestamp="20210111 00:52:52.572" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-LOGIN"}</msg>
+<msg timestamp="20210111 00:52:52.728" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:52:52.728" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:52.728" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3B000000-0000-0000-095A-000000000000/click {"id": "3B000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:52:53.178" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3B000000-0000-0000-095A-000000000000/click HTTP/1.1" 200 65</msg>
+<msg timestamp="20210111 00:52:53.179" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:52.569" endtime="20210111 00:52:53.179"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:52.569" endtime="20210111 00:52:53.179"></status>
+</kw>
+<kw name="verify error message">
+<arguments>
+<arg>${err_message}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${err_message}</arg>
+<arg>${min_time_out}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:53.180" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "Username and password do not match any user in this service."}</msg>
+<msg timestamp="20210111 00:52:53.412" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 267</msg>
+<msg timestamp="20210111 00:52:53.413" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:53.413" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/32000000-0000-0000-095A-000000000000/displayed {"id": "32000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:52:53.613" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/32000000-0000-0000-095A-000000000000/displayed HTTP/1.1" 200 65</msg>
+<msg timestamp="20210111 00:52:53.613" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:53.179" endtime="20210111 00:52:53.613"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:53.179" endtime="20210111 00:52:53.613"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:48.656" endtime="20210111 00:52:53.613"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:48.656" endtime="20210111 00:52:53.614" critical="yes"></status>
+</test>
+<test id="s1-t3" name="tc_# Wrong user right pass">
+<kw name="invalid login">
+<arguments>
+<arg>problem_uses</arg>
+<arg>secret_sauce</arg>
+<arg>${txt_err_username_password_message}</arg>
+</arguments>
+<kw name="clear username and password text">
+<kw name="Clear Text" library="AppiumLibrary">
+<doc>Clears the text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_username}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:53.616" level="INFO">Clear text field 'name=test-Username'</msg>
+<msg timestamp="20210111 00:52:53.616" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Username"}</msg>
+<msg timestamp="20210111 00:52:53.838" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:52:53.838" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:53.839" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/clear {"id": "3F000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:52:55.245" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:52:55.245" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:53.615" endtime="20210111 00:52:55.245"></status>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<doc>Clears the text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_password}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:55.247" level="INFO">Clear text field 'name=test-Password'</msg>
+<msg timestamp="20210111 00:52:55.247" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Password"}</msg>
+<msg timestamp="20210111 00:52:55.406" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:52:55.406" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:55.406" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/40000000-0000-0000-095A-000000000000/clear {"id": "40000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:52:56.807" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/40000000-0000-0000-095A-000000000000/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:52:56.807" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:55.245" endtime="20210111 00:52:56.807"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:53.614" endtime="20210111 00:52:56.807"></status>
+</kw>
+<kw name="input username">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:56.809" level="INFO">Typing text 'problem_uses' into text field 'name=test-Username'</msg>
+<msg timestamp="20210111 00:52:56.809" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Username"}</msg>
+<msg timestamp="20210111 00:52:56.966" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:52:56.966" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:56.966" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/value {"text": "problem_uses", "value": ["p", "r", "o", "b", "l", "e", "m", "_", "u", "s", "e", "s"], "id": "3F000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:52:58.072" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:52:58.073" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:56.808" endtime="20210111 00:52:58.073"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:56.807" endtime="20210111 00:52:58.073"></status>
+</kw>
+<kw name="input password">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Value" library="AppiumLibrary">
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<arguments>
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:58.076" level="INFO">Setting text 'secret_sauce' into text field 'name=test-Password'</msg>
+<msg timestamp="20210111 00:52:58.076" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Password"}</msg>
+<msg timestamp="20210111 00:52:58.248" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:52:58.248" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:58.248" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/appium/element/40000000-0000-0000-095A-000000000000/value {"id": "40000000-0000-0000-095A-000000000000", "value": ["secret_sauce"]}</msg>
+<msg timestamp="20210111 00:52:59.356" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/appium/element/40000000-0000-0000-095A-000000000000/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:52:59.356" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:58.074" endtime="20210111 00:52:59.356"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:58.073" endtime="20210111 00:52:59.356"></status>
+</kw>
+<kw name="click login button">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btn_login}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:59.359" level="INFO">Clicking element 'name=test-LOGIN'.</msg>
+<msg timestamp="20210111 00:52:59.359" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-LOGIN"}</msg>
+<msg timestamp="20210111 00:52:59.518" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:52:59.518" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:52:59.518" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3B000000-0000-0000-095A-000000000000/click {"id": "3B000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:52:59.966" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3B000000-0000-0000-095A-000000000000/click HTTP/1.1" 200 65</msg>
+<msg timestamp="20210111 00:52:59.967" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:59.357" endtime="20210111 00:52:59.967"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:59.357" endtime="20210111 00:52:59.967"></status>
+</kw>
+<kw name="verify error message">
+<arguments>
+<arg>${err_message}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${err_message}</arg>
+<arg>${min_time_out}</arg>
+</arguments>
+<msg timestamp="20210111 00:52:59.968" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "Username and password do not match any user in this service."}</msg>
+<msg timestamp="20210111 00:53:00.198" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 267</msg>
+<msg timestamp="20210111 00:53:00.198" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:53:00.198" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/32000000-0000-0000-095A-000000000000/displayed {"id": "32000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:53:00.401" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/32000000-0000-0000-095A-000000000000/displayed HTTP/1.1" 200 65</msg>
+<msg timestamp="20210111 00:53:00.401" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:52:59.967" endtime="20210111 00:53:00.401"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:59.967" endtime="20210111 00:53:00.402"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:53.614" endtime="20210111 00:53:00.402"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:52:53.614" endtime="20210111 00:53:00.402" critical="yes"></status>
+</test>
+<test id="s1-t4" name="tc_# Wrong user empty pass">
+<kw name="invalid login">
+<arguments>
+<arg>problem_uses</arg>
+<arg>${empty}</arg>
+<arg>${txt_err_password_message}</arg>
+</arguments>
+<kw name="clear username and password text">
+<kw name="Clear Text" library="AppiumLibrary">
+<doc>Clears the text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_username}</arg>
+</arguments>
+<msg timestamp="20210111 00:53:00.406" level="INFO">Clear text field 'name=test-Username'</msg>
+<msg timestamp="20210111 00:53:00.406" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Username"}</msg>
+<msg timestamp="20210111 00:53:00.574" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:53:00.574" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:53:00.574" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/clear {"id": "3F000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:53:01.934" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:53:01.934" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:53:00.404" endtime="20210111 00:53:01.934"></status>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<doc>Clears the text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_password}</arg>
+</arguments>
+<msg timestamp="20210111 00:53:01.936" level="INFO">Clear text field 'name=test-Password'</msg>
+<msg timestamp="20210111 00:53:01.936" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Password"}</msg>
+<msg timestamp="20210111 00:53:02.085" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:53:02.085" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:53:02.085" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/40000000-0000-0000-095A-000000000000/clear {"id": "40000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:53:03.457" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/40000000-0000-0000-095A-000000000000/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:53:03.457" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:53:01.934" endtime="20210111 00:53:03.457"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:53:00.403" endtime="20210111 00:53:03.457"></status>
+</kw>
+<kw name="input username">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210111 00:53:03.459" level="INFO">Typing text 'problem_uses' into text field 'name=test-Username'</msg>
+<msg timestamp="20210111 00:53:03.459" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Username"}</msg>
+<msg timestamp="20210111 00:53:03.612" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:53:03.612" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:53:03.612" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/value {"text": "problem_uses", "value": ["p", "r", "o", "b", "l", "e", "m", "_", "u", "s", "e", "s"], "id": "3F000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:53:04.690" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:53:04.690" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:53:03.458" endtime="20210111 00:53:04.690"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:53:03.458" endtime="20210111 00:53:04.690"></status>
+</kw>
+<kw name="input password">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Value" library="AppiumLibrary">
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<arguments>
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210111 00:53:04.693" level="INFO">Setting text '' into text field 'name=test-Password'</msg>
+<msg timestamp="20210111 00:53:04.693" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Password"}</msg>
+<msg timestamp="20210111 00:53:04.851" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:53:04.851" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:53:04.851" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/appium/element/40000000-0000-0000-095A-000000000000/value {"id": "40000000-0000-0000-095A-000000000000", "value": [""]}</msg>
+<msg timestamp="20210111 00:53:05.747" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/appium/element/40000000-0000-0000-095A-000000000000/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:53:05.747" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:53:04.691" endtime="20210111 00:53:05.747"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:53:04.690" endtime="20210111 00:53:05.747"></status>
+</kw>
+<kw name="click login button">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btn_login}</arg>
+</arguments>
+<msg timestamp="20210111 00:53:05.749" level="INFO">Clicking element 'name=test-LOGIN'.</msg>
+<msg timestamp="20210111 00:53:05.750" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-LOGIN"}</msg>
+<msg timestamp="20210111 00:53:05.909" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:53:05.909" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:53:05.909" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3B000000-0000-0000-095A-000000000000/click {"id": "3B000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:53:06.382" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3B000000-0000-0000-095A-000000000000/click HTTP/1.1" 200 65</msg>
+<msg timestamp="20210111 00:53:06.383" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:53:05.748" endtime="20210111 00:53:06.383"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:53:05.747" endtime="20210111 00:53:06.383"></status>
+</kw>
+<kw name="verify error message">
+<arguments>
+<arg>${err_message}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${err_message}</arg>
+<arg>${min_time_out}</arg>
+</arguments>
+<msg timestamp="20210111 00:53:06.384" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "id", "value": "Password is required"}</msg>
+<msg timestamp="20210111 00:53:06.613" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 267</msg>
+<msg timestamp="20210111 00:53:06.613" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:53:06.614" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/32000000-0000-0000-095A-000000000000/displayed {"id": "32000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:53:06.807" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/32000000-0000-0000-095A-000000000000/displayed HTTP/1.1" 200 65</msg>
+<msg timestamp="20210111 00:53:06.807" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:53:06.384" endtime="20210111 00:53:06.807"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:53:06.383" endtime="20210111 00:53:06.807"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:53:00.403" endtime="20210111 00:53:06.807"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:53:00.403" endtime="20210111 00:53:06.807" critical="yes"></status>
+</test>
+<test id="s1-t5" name="tc_# Wrong user wrong pass">
+<kw name="invalid login">
+<arguments>
+<arg>problem_uses</arg>
+<arg>problem_user</arg>
+<arg>${txt_err_username_password_message}</arg>
+</arguments>
+<kw name="clear username and password text">
+<kw name="Clear Text" library="AppiumLibrary">
+<doc>Clears the text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_username}</arg>
+</arguments>
+<msg timestamp="20210111 00:53:06.810" level="INFO">Clear text field 'name=test-Username'</msg>
+<msg timestamp="20210111 00:53:06.810" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Username"}</msg>
+<msg timestamp="20210111 00:53:06.973" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:53:06.973" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:53:06.973" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/clear {"id": "3F000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:53:08.338" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:53:08.338" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:53:06.808" endtime="20210111 00:53:08.338"></status>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<doc>Clears the text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_password}</arg>
+</arguments>
+<msg timestamp="20210111 00:53:08.339" level="INFO">Clear text field 'name=test-Password'</msg>
+<msg timestamp="20210111 00:53:08.340" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Password"}</msg>
+<msg timestamp="20210111 00:53:08.485" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:53:08.485" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:53:08.485" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/40000000-0000-0000-095A-000000000000/clear {"id": "40000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:53:08.616" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/40000000-0000-0000-095A-000000000000/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:53:08.616" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:53:08.338" endtime="20210111 00:53:08.616"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:53:06.808" endtime="20210111 00:53:08.616"></status>
+</kw>
+<kw name="input username">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${txt_username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210111 00:53:08.618" level="INFO">Typing text 'problem_uses' into text field 'name=test-Username'</msg>
+<msg timestamp="20210111 00:53:08.618" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Username"}</msg>
+<msg timestamp="20210111 00:53:08.771" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:53:08.771" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:53:08.771" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/value {"text": "problem_uses", "value": ["p", "r", "o", "b", "l", "e", "m", "_", "u", "s", "e", "s"], "id": "3F000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:53:09.330" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3F000000-0000-0000-095A-000000000000/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:53:09.330" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:53:08.617" endtime="20210111 00:53:09.330"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:53:08.616" endtime="20210111 00:53:09.330"></status>
+</kw>
+<kw name="input password">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Value" library="AppiumLibrary">
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<arguments>
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210111 00:53:09.333" level="INFO">Setting text 'problem_user' into text field 'name=test-Password'</msg>
+<msg timestamp="20210111 00:53:09.333" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-Password"}</msg>
+<msg timestamp="20210111 00:53:09.495" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:53:09.495" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:53:09.495" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/appium/element/40000000-0000-0000-095A-000000000000/value {"id": "40000000-0000-0000-095A-000000000000", "value": ["problem_user"]}</msg>
+<msg timestamp="20210111 00:53:10.600" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/appium/element/40000000-0000-0000-095A-000000000000/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20210111 00:53:10.600" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:53:09.331" endtime="20210111 00:53:10.601"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:53:09.330" endtime="20210111 00:53:10.601"></status>
+</kw>
+<kw name="click login button">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btn_login}</arg>
+</arguments>
+<msg timestamp="20210111 00:53:10.603" level="INFO">Clicking element 'name=test-LOGIN'.</msg>
+<msg timestamp="20210111 00:53:10.603" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "test-LOGIN"}</msg>
+<msg timestamp="20210111 00:53:10.782" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20210111 00:53:10.782" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:53:10.782" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3B000000-0000-0000-095A-000000000000/click {"id": "3B000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:53:11.260" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/3B000000-0000-0000-095A-000000000000/click HTTP/1.1" 200 65</msg>
+<msg timestamp="20210111 00:53:11.260" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:53:10.601" endtime="20210111 00:53:11.260"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:53:10.601" endtime="20210111 00:53:11.261"></status>
+</kw>
+<kw name="verify error message">
+<arguments>
+<arg>${err_message}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${err_message}</arg>
+<arg>${min_time_out}</arg>
+</arguments>
+<msg timestamp="20210111 00:53:11.261" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements {"using": "name", "value": "Username and password do not match any user in this service."}</msg>
+<msg timestamp="20210111 00:53:11.479" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/elements HTTP/1.1" 200 267</msg>
+<msg timestamp="20210111 00:53:11.479" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210111 00:53:11.479" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/32000000-0000-0000-095A-000000000000/displayed {"id": "32000000-0000-0000-095A-000000000000"}</msg>
+<msg timestamp="20210111 00:53:11.683" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/6a1ab302-282c-45b8-ba0f-013b1b90b348/element/32000000-0000-0000-095A-000000000000/displayed HTTP/1.1" 200 65</msg>
+<msg timestamp="20210111 00:53:11.683" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20210111 00:53:11.261" endtime="20210111 00:53:11.683"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:53:11.261" endtime="20210111 00:53:11.683"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:53:06.808" endtime="20210111 00:53:11.683"></status>
+</kw>
+<status status="PASS" starttime="20210111 00:53:06.808" endtime="20210111 00:53:11.683" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210111 00:52:41.389" endtime="20210111 00:53:11.684"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0">Critical Tests</stat>
+<stat pass="5" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
